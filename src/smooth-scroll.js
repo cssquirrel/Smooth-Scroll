@@ -1,22 +1,31 @@
-// Created by Kyle Weems @cssquirrel | requires jQuery 1.9+ 
+// Created by Kyle Weems @cssquirrel & James South @james_m_south | requires jQuery 1.9+ 
 // repo @ https://github.com/cssquirrel/Smooth-Scroll | license @ http://opensource.org/licenses/MIT 
 if (window.jQuery) {
-    jQuery(document).ready(function () {
-        jQuery(document).on('click', 'a[data-smooth-scroll]', function () {
-            var href = jQuery(this).attr('href');
-            if (href.indexOf('#') == 0) {
-                var documentHeight = jQuery(document).height();
-                var scrollOffset = jQuery(document).scrollTop();
-                var distance = Math.abs(scrollOffset - jQuery(href).offset().top);
-                var speed = (distance / documentHeight) * 1000;
-                if (jQuery(this).attr('data-speed-modifier') != undefined) {
-                    speed = speed * jQuery(this).attr('data-speed-modifier');
+    (function($, w, d) {
+        var $d = $(d);
+        $d.ready(function () {
+            $d.on('click', 'a[data-smooth-scroll]', function (event) {
+                var $this = $(this), 
+					href = $(this).attr('href');
+                if (href.indexOf('#') === 0) {
+                    event.preventDefault();
+                    var documentHeight = $d.height(), 
+						scrollTop = $d.scrollTop(),
+						offset = $(href).offset().top,
+						distance = Math.abs(scrollTop - offset),
+						time = (distance / documentHeight) * 1000,
+						called = false;
+                    if ($this.data('speedModifier') != undefined) {
+                        time = time / $this.attr('speedModifier');
+                    }
+                    $('html, body').animate({ scrollTop: offset }, time, function () {
+                        if (!called) {
+                            called = true;
+                            w.location.hash = href;
+                        }
+                    });
                 }
-                jQuery('html, body').animate({ scrollTop: jQuery(href).offset().top }, speed, function () {
-                    window.location.hash = href;
-                });
-                return false;
-            }
+            });
         });
-    });
+    }(jQuery, window, document));
 }
