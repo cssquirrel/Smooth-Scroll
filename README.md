@@ -2,14 +2,9 @@
 
 Requires jQuery 1.9+
 
-A small script that causes hyperlinks that link to an element within the same page (via an href="#hashtag") to smoothly scroll down to the targeted element.
+A small script that causes hyperlinks that link to an element within the same page (via an href="#hashtag") to smoothly scroll down to the targeted element. Include the script on your page and use as follows.
 
 Usage:
-
-1. Have jQuery v1.9+ referenced on your page.
-2. Add smooth-scroll.js after the jQuery reference.
-3. Add the attribute 'data-smooth-scroll' your anchors as per the following example.
-
 
     <a href="#something" data-smooth-scroll>link</a>
 
