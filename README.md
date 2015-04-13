@@ -8,6 +8,6 @@ Usage:
 
     <a href="#something" data-smooth-scroll>link</a>
 
-By default, Smooth Scroll will scroll to the target hyperlink in an animation lasting 1 second long. You can change this by adding the optional 'data-scroll-speed' attribute, with a value of time in milliseconds. In the following example the link will scroll to the target in 250ms:
+By default, Smooth Scroll will scroll to the target hyperlink in an animation lasting (distance in pixels / document height in pixels) * 1000 milliseconds long. You can change this by adding the optional 'data-speed-modifier' attribute, a number you would like to multiply the speed to scroll by. In the following example clicking on the link will cause the browser to scroll to the target twice as fast:
 
-    <a href="#something" data-smooth-scroll data-scroll-speed="250">link</a>
+    <a href="#something" data-smooth-scroll data-speed-modifier="0.5">link</a>
