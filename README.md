@@ -1,6 +1,6 @@
 # Smooth-Scroll
 
-Several drastic improvements provided by [James South](https://github.com/JimBobSquarePants)
+Several drastic improvements provided by [James South](https://github.com/JimBobSquarePants).
 
 Requires jQuery 1.9+
 
