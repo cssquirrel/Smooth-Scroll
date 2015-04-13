@@ -8,10 +8,10 @@ Usage:
 
 1. Have jQuery v1.9+ referenced on your page.
 2. Add smooth-scroll.js after the jQuery reference.
-3. Add the attribute 'data-smooth-scroll' your anchors as per this example: 
+3. Add the attribute 'data-smooth-scroll' your anchors as per the following example.
 
     <a href="#something" data-smooth-scroll>link</a>
 
-By default, Smooth Scroll will scroll to the target hyperlink in an animation lasting 1 second long. You can change this by adding the optional 'data-scroll-speed' attribute, with a value of time in milliseconds. In the following example the link will scroll to the target in 250ms: 
+By default, Smooth Scroll will scroll to the target hyperlink in an animation lasting 1 second long. You can change this by adding the optional 'data-scroll-speed' attribute, with a value of time in milliseconds. In the following example the link will scroll to the target in 250ms:
 
     <a href="#something" data-smooth-scroll data-scroll-speed="250">link</a>
