@@ -6,7 +6,7 @@ if (window.jQuery) {
         $d.ready(function () {
             $d.on('click', 'a[data-smooth-scroll]', function (event) {
                 var $this = $(this), 
-					href = $(this).attr('href');
+					href = $this.attr('href');
                 if (href.indexOf('#') === 0) {
                     event.preventDefault();
                     var documentHeight = $d.height(), 
